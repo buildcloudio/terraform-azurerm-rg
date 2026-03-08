@@ -1,0 +1,76 @@
+# -------------------------------------------------------
+# Terraform
+# -------------------------------------------------------
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# -------------------------------------------------------
+# Test variables — never commit real values
+# -------------------------------------------------------
+*.tfvars
+*.tfvars.json
+
+# Keep example tfvars if you have one
+!example.tfvars
+!example.tfvars.json
+
+# -------------------------------------------------------
+# VS Code
+# -------------------------------------------------------
+.vscode/*
+# But keep the schema settings we just created
+!.vscode/settings.json
+
+# -------------------------------------------------------
+# macOS
+# -------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# -------------------------------------------------------
+# JetBrains IDEs (just in case)
+# -------------------------------------------------------
+.idea/
+*.iml
+
+# -------------------------------------------------------
+# Test artifacts
+# -------------------------------------------------------
+Tests/.terraform/
+Tests/*.tfstate
+Tests/*.tfstate.*
+Tests/tfplan
+Tests/*.tfvars
+Tests/plan-output.txt
+Tests/apply-output.txt
+Tests/destroy-output.txt
+
+# -------------------------------------------------------
+# GitHub Actions local artifacts
+# -------------------------------------------------------
+plan-output.txt
+apply-output.txt
+destroy-output.txt
+
+# -------------------------------------------------------
+# Misc
+# -------------------------------------------------------
+*.zip
+*.tar.gz
+*.log
+.env
+.env.*
