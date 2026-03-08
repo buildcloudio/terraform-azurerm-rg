@@ -12,9 +12,9 @@ jobs:
   terraform:
     uses: buildcloudio/terraform-deployment-template/.github/workflows/terraform-deploy.yml@main
     with:
-      working_directory: "."
+      working_directory: "Tests"
       terraform_version: "1.7.0"
-      var_file: "Tests/module.tf.tfvars"
+      var_file: "module.tf.tfvars"
       run_destroy: ${{ inputs.run_destroy }}
     secrets:
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
