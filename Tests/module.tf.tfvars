@@ -6,14 +6,14 @@
 
 resource_groups = {
   "rg1" = {
-    subscription = "buildcloudio"
+    subscription = "np"
     environment  = "dev"
     usecase      = "test"
     location     = "westeurope"
   },
-  
+
   "rg2" = {
-        subscription = "buildcloudio"
+        subscription = "np"
         environment  = "dev"
         usecase      = "test2"
         location     = "westeurope"

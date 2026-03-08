@@ -8,7 +8,7 @@ module "buildcloudio_azure_rg" {
   subscription = each.value.subscription
   environment  = each.value.environment
   usecase      = each.value.usecase
-  location     =  each.value.location
+  location     = each.value.location
 }
 
 #------------------------------------------------------------------
