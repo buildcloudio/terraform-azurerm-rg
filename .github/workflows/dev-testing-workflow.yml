@@ -6,7 +6,7 @@ on:
       run_destroy:
         description: "Destroy infrastructure?"
         type: boolean
-        default: false
+        default: true
 
 jobs:
   terraform:
