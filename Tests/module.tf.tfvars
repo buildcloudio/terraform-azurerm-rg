@@ -13,11 +13,11 @@ resource_groups = {
   },
 
   "rg2" = {
-        subscription = "np"
-        environment  = "dev"
-        usecase      = "test2"
-        location     = "westeurope"
-    }
+    subscription = "np"
+    environment  = "dev"
+    usecase      = "test2"
+    location     = "westeurope"
+  }
 }
 
 #------------------------------------------------------------------
