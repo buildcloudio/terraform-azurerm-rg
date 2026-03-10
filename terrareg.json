@@ -1,0 +1,7 @@
+{
+  "description": "Azure - Resource Group",
+  "owner": "buildcloudio",
+  "source": "https://github.com/buildcloudio/terraform-azurerm-rg",
+  "issues": "https://github.com/buildcloudio/terraform-azurerm-rg/issues",
+  "email": ""
+}
