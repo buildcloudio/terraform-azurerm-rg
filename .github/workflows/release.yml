@@ -5,10 +5,11 @@ on:
     tags:
       - 'v*.*.*'
 
+permissions:
+  contents: write
+
 jobs:
   release:
     uses: buildcloudio/terraform-registry-template/.github/workflows/module-release.yml@main
-    permissions:
-      contents: write
     secrets:
       REGISTRY_API_KEY: ${{ secrets.REGISTRY_API_KEY }}
