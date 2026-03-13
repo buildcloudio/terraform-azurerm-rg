@@ -1,9 +1,3 @@
-#------------------------------------------------------------------
-# Azure - Resource Group
-#------------------------------------------------------------------
-
-# Resource Group
-
 variable "resource_groups" {
   description = "Map of resource groups to create"
   type = map(object({
@@ -13,5 +7,3 @@ variable "resource_groups" {
     location     = string
   }))
 }
-
-#------------------------------------------------------------------
