@@ -3,17 +3,73 @@
 Terraform module to manage Azure Resource Groups.
 
 ## Usage
+
+### module.tf
 ```hcl
 module "resource_group" {
-  source = "git::https://github.com/buildcloudio/terraform-azurerm-rg.git?ref=v1.0.0"
+  source       = "registry.buildcloudio.dev/buildcloudio/rg/azurerm"
+  version.     = "1.0.2"
 
-  name     = "rg-myproject-001"
-  location = "westeurope"
-  tags = {
-    environment = "dev"
-    owner       = "anand"
+  for_each     = { for each in var.resource_groups : each.usecase => each }
+  subscription = each.value.subscription
+  environment  = each.value.environment
+  usecase      = each.value.usecase
+  location     = each.value.location
+}
+```
+
+### variables.tf
+```hcl
+variable "resource_groups" {
+  description = "Map of resource groups to create"
+  type = map(object({
+    subscription = string
+    environment  = string
+    usecase      = string
+    location     = string
+  }))
+}
+```
+
+### module.tf.tfvars
+```hcl
+resource_groups = {
+  "rg1" = {
+    subscription = "buildcloudio"
+    environment  = "dev"
+    usecase      = "test"
+    location     = "westeurope"
+  },
+
+  "rg2" = {
+    subscription = "buildcloudio"
+    environment  = "dev"
+    usecase      = "test2"
+    location     = "westeurope"
   }
 }
+```
+
+### main.tf
+```hcl
+terraform {
+  #backend "azurerm" {}
+
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "4.61.0"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+```
+
+### outputs.tf
+```hcl
 ```
 
 ## Inputs
