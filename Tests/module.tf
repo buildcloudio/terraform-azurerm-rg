@@ -1,4 +1,4 @@
-module "buildcloudio_azure_rg" {
+module "resource_group" {
   for_each     = { for each in var.resource_groups : each.usecase => each }
   source       = "../"
   subscription = each.value.subscription
